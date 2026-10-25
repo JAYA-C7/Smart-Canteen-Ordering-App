@@ -1,0 +1,12 @@
+# Environment variables and secret keys
+.env
+.env.*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Debug logs
+npm-debug.log*
