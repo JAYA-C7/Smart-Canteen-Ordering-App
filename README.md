@@ -289,3 +289,64 @@ GitHub: [JAYA-C7](https://github.com/JAYA-C7)
 ## 📄 License
 
 No license has been added yet. The repository's reuse and distribution terms should be defined before others use or redistribute the project.
+## 📸 Project Screenshots
+
+### 1. Application Interface
+
+![Application Interface](screenshots/interface.png)
+
+### 2. Food Menu
+
+![Food Menu](screenshots/food-menu.png)
+
+### 3. Student Login
+
+![Student Login](screenshots/login.png)
+
+### 4. Student Registration
+
+![Student Registration](screenshots/register.png)
+
+### 5. Shopping Cart
+
+![Shopping Cart](screenshots/shopping-cart.png)
+
+### 6. Order Details
+
+![Order Details](screenshots/order-details.png)
+
+### 7. My Orders
+
+![My Orders](screenshots/my-orders.png)
+
+### 8. Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### 9. Add Food Items
+
+![Add Food Items](screenshots/food-add.png)
+
+### 10. Food Management
+
+![Food Management](screenshots/food-management.png)
+
+### 11. Order Management
+
+![Order Management](screenshots/order-management.png)
+
+### 12. Food Nutrition Information
+
+![Food Nutrition Information](screenshots/nutrition.png)
+
+### 13. Notifications
+
+![Notifications](screenshots/notification.png)
+
+### 14. Chat Assistant
+
+![Chat Assistant](screenshots/chat-assistent.png)
+
+### 15. Application Completion Screen
+
+![Application Completion Screen](screenshots/end.png)
