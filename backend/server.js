@@ -60,7 +60,7 @@ const upload = multer({
 // Make uploaded images accessible through the backend
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 /* Admin Dashboard API */
 app.get(
 "/api/admin/dashboard",
@@ -2201,5 +2201,5 @@ app.put(
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
