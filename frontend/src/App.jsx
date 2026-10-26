@@ -145,7 +145,7 @@ async function handleViewNutrition() {
         }
 
         const response = await fetch(
-            `http://localhost:3000/api/nutrition?${searchParams.toString()}`
+            `https://smart-canteen-ordering-app.onrender.com/api/nutrition?${searchParams.toString()}`
         )
 
         const data = await response.json()
@@ -181,7 +181,7 @@ async function handleNutritionSearchChange(value) {
 
     try {
         const response = await fetch(
-            `http://localhost:3000/api/nutrition?search=${encodeURIComponent(value.trim())}`
+            `https://smart-canteen-ordering-app.onrender.com/api/nutrition?search=${encodeURIComponent(value.trim())}`
         )
 
         const data = await response.json()
@@ -210,7 +210,7 @@ useEffect(() => {
     async function fetchFoods() {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/foods'
+          'https://smart-canteen-ordering-app.onrender.com/api/foods'
         )
 
         if (!response.ok) {
@@ -254,7 +254,7 @@ const token = localStorage.getItem('token')
 
   try {
     const response = await fetch(
-      'http://localhost:3000/api/auth/profile',
+      'https://smart-canteen-ordering-app.onrender.com/api/auth/profile',
       {
         method: 'GET',
         headers: {
@@ -338,7 +338,7 @@ checkLoginStatus()
 
     try {
       const response = await fetch(
-        'http://localhost:3000/api/auth/register',
+        'https://smart-canteen-ordering-app.onrender.com/api/auth/register',
         {
           method: 'POST',
           headers: {
@@ -382,7 +382,7 @@ checkLoginStatus()
   const token = localStorage.getItem('token')
 
   try {
-    const response = await fetch('http://localhost:3000/api/admin/stats', {
+    const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/admin/stats', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -404,7 +404,7 @@ const fetchAdminOrders = async () => {
   const token = localStorage.getItem('token')
 
   try {
-    const response = await fetch('http://localhost:3000/api/admin/orders', {
+    const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/admin/orders', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -434,7 +434,7 @@ const updateOrderStatus = async (orderId, newStatus) => {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/admin/orders/${orderId}/status`,
+      `https://smart-canteen-ordering-app.onrender.com/api/admin/orders/${orderId}/status`,
       {
         method: 'PUT',
         headers: {
@@ -470,7 +470,7 @@ const fetchAdminFoods = async () => {
   const token = localStorage.getItem('token')
 
   try {
-    const response = await fetch('http://localhost:3000/api/foods', {
+    const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/foods', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -503,7 +503,7 @@ async function handleLogin(event) {
 
   try {
     const response = await fetch(
-      'http://localhost:3000/api/auth/login',
+      'https://smart-canteen-ordering-app.onrender.com/api/auth/login',
       {
         method: 'POST',
         headers: {
@@ -568,8 +568,8 @@ const isEditing = editingFoodId !== null;
 
 
 const url = isEditing
-  ? `http://localhost:3000/api/admin/foods/${editingFoodId}`
-  : 'http://localhost:3000/api/admin/foods';
+  ? `https://smart-canteen-ordering-app.onrender.com/api/admin/foods/${editingFoodId}`
+  : 'https://smart-canteen-ordering-app.onrender.com/api/admin/foods';
 
 // Prepare food details and the optional image file.
 const formData = new FormData();
@@ -665,7 +665,7 @@ setIsDeletingFood(true);
 
 try {
 const response = await fetch(
-`http://localhost:3000/api/admin/foods/${foodToDelete.food_id}`,
+`https://smart-canteen-ordering-app.onrender.com/api/admin/foods/${foodToDelete.food_id}`,
 {
 method: 'DELETE',
 headers: {
@@ -754,7 +754,7 @@ setPendingPayment(null)
 
 try {
   // 1. Create the order
-  const response = await fetch('http://localhost:3000/api/orders', {
+  const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/orders', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -778,7 +778,7 @@ try {
 
   // 2. Create the payment record for this order
   const paymentResponse = await fetch(
-    'http://localhost:3000/api/payments',
+    'https://smart-canteen-ordering-app.onrender.com/api/payments',
     {
       method: 'POST',
       headers: {
@@ -833,7 +833,7 @@ try {
   }
 
   // 5. Refresh menu stock after order creation
-  const foodsResponse = await fetch('http://localhost:3000/api/foods')
+  const foodsResponse = await fetch('https://smart-canteen-ordering-app.onrender.com/api/foods')
 
   if (foodsResponse.ok) {
     const foodsData = await foodsResponse.json()
@@ -883,7 +883,7 @@ setPaymentMessageType('')
 
 try {
 const response = await fetch(
-`http://localhost:3000/api/payments/${pendingPayment.paymentId}/simulate`,
+`https://smart-canteen-ordering-app.onrender.com/api/payments/${pendingPayment.paymentId}/simulate`,
 {
 method: 'PUT',
 headers: {
@@ -951,7 +951,7 @@ setPaymentProcessing(false)
 
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('http://localhost:3000/api/orders', {
+      const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/orders', {
         headers: { Authorization: `Bearer ${token}` },
       })
       const data = await response.json()
@@ -985,7 +985,7 @@ async function handleViewNotifications() {
   try {
     const token = localStorage.getItem('token')
 
-    const response = await fetch('http://localhost:3000/api/notifications', {
+    const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/notifications', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -1013,7 +1013,7 @@ async function handleMarkNotificationRead(notificationId) {
     const token = localStorage.getItem('token')
 
     const response = await fetch(
-      `http://localhost:3000/api/notifications/${notificationId}/read`,
+      `https://smart-canteen-ordering-app.onrender.com/api/notifications/${notificationId}/read`,
       {
         method: 'PUT',
         headers: {
@@ -1050,7 +1050,7 @@ async function handleViewNutritionWithEmptySearch() {
     setNutritionError('')
 
     try {
-        const response = await fetch('http://localhost:3000/api/nutrition')
+        const response = await fetch('https://smart-canteen-ordering-app.onrender.com/api/nutrition')
         const data = await response.json()
 
         if (!response.ok) {
@@ -1081,7 +1081,7 @@ async function handleViewOrderDetails(orderId) {
     const token = localStorage.getItem('token')
     console.log('Token available:', Boolean(token))
 
-    const response = await fetch(`http://localhost:3000/api/orders/${orderId}`, {
+    const response = await fetch(`https://smart-canteen-ordering-app.onrender.com/api/orders/${orderId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
 
@@ -2220,7 +2220,7 @@ if (currentPage !== 'home') {
     <img
       src={
         food.imageUrl.startsWith('/uploads/')
-          ? `http://localhost:3000${food.imageUrl}`
+          ? `https://smart-canteen-ordering-app.onrender.com${food.imageUrl}`
           : food.imageUrl
       }
       alt={food.name}
